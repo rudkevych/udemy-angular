@@ -1,7 +1,19 @@
 <div class="container">
   <div class="row">
-    <div class="col-xs-12">
-      <h1>hello</h1>
+    <div class="col-xs-6">
+      <label>Enter your username</label>
+      <input
+        type="text"
+        class="form-control"
+        [(ngModel)]="username">
+      <button
+         class="btn btn-primary"
+         [disabled]="!username"
+         (click)="onReset()">Submit</button>
+      <hr>
+    <p class="alert alert-info">Current username: {{ username }}</p>
     </div>
   </div>
 </div>
+
+
