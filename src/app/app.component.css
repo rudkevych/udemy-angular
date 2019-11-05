@@ -1,0 +1,8 @@
+.blue {
+    border: 1px solid blue;
+    background-color: lightblue;
+}
+
+.display {
+    visibility: hidden;
+}

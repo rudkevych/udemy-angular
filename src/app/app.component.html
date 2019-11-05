@@ -1,7 +1,21 @@
 <div class="container">
   <div class="row">
     <div class="col-xs-12">
-      <h1>hello</h1>
+        <button class='btn btn-info' (click)='onDisplayChange()'>Display details</button>
+        <hr>
+      <p  class="alert alert-success" 
+          [ngClass]="{display: displayPassword}"
+          >Secret Password = tuna</p>
     </div>
   </div>
+  <div class="row">
+      <h5 *ngFor="let click of clicks" 
+          [ngClass]="click >=5 ? 'blue': null"
+          class="list-group-item">{{click}}</h5>
+  </div>
 </div>
+
+<!-- [ngStyle]="{backgroundColor: click >=5 ? 'blue' : null}" -->
+<!-- *ngIf="displayPassword" -->
+
+
