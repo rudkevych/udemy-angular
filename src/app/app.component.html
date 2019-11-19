@@ -9,7 +9,9 @@
                 <hr>
                 <br>
                 <h2>App status: {{appStatus | async}}</h2>
-                <li class="list-group-item" *ngFor="let server of servers | filter:filteredStatus:'status'" [ngClass]="getStatusClasses(server)">
+                <li class="list-group-item" 
+                    *ngFor="let server of servers | filter:filteredStatus:'status' | sort:'name'" 
+                    [ngClass]="getStatusClasses(server)">
                     <span class="badge">
                         {{ server.status }}
                     </span>
