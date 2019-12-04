@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { trigger, state, style, transition, animate, keyframes } from '@angular/animations';
+import { trigger, state, style, transition, animate, keyframes, group } from '@angular/animations';
 
 @Component({
   selector: 'app-root',
@@ -65,7 +65,8 @@ import { trigger, state, style, transition, animate, keyframes } from '@angular/
       state('in' , style({
         opacity: 1,
         transform: 'translateX(0)'
-      })), transition('void => *', [
+      })),
+       transition('void => *', [
         animate(1000, keyframes([
           style({
             transform: 'translateX(-100px)',
@@ -88,8 +89,19 @@ import { trigger, state, style, transition, animate, keyframes } from '@angular/
             offset: 1
           }),
         ]))
+      ]),
+      transition('* => void', [
+        group([
+          animate(300, style({
+            color: 'red'
+          })),
+          animate(800, style({
+            transform: 'translateX(100px)',
+            opacity: 0
+          }))
+        ])
       ])
-    ]),
+    ])
   ]
 })
 export class AppComponent {
